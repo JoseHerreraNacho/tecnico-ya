@@ -1,0 +1,22 @@
+TÉCNICO YA - Corrección de red Android (desarrollo)
+
+Cambios:
+- CapacitorHttp habilitado para peticiones HTTP nativas (evita restricciones CORS/WebView en peticiones Angular XMLHttpRequest).
+- Configuración Android de tráfico HTTP explícita para pruebas en red local.
+- Se conserva la API http://192.168.100.4:4000/api.
+
+ANTES DE COMPILAR: verifica que la IP actual de tu PC siga siendo 192.168.100.4 y que Express escuche en 0.0.0.0:4000.
+
+PowerShell (en la carpeta de este proyecto):
+$env:JAVA_HOME = "C:\Program Files\Android\Android Studio\jbr"
+$env:Path = "$env:JAVA_HOME\bin;$env:Path"
+npm.cmd install
+npm.cmd run build
+npx.cmd cap sync android
+cd android
+.\gradlew.bat assembleDebug
+
+APK: android\app\build\outputs\apk\debug\app-debug.apk
+
+IMPORTANTE: Esta corrección no ha podido ser compilada ni probada en un teléfono desde este entorno. El backend MySQL y Node deben seguir encendidos y el teléfono estar en la misma red.
+No usar configuración HTTP sin TLS en producción.

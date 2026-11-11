@@ -1,0 +1,21 @@
+
+/* Estilos fundamentales de Ionic */
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Utilidades de Ionic */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+:root { --ion-color-primary:#0057a8; --ion-color-primary-rgb:0,87,168; --ion-color-primary-contrast:#ffffff; --ion-color-primary-contrast-rgb:255,255,255; --ion-color-primary-shade:#004d94; --ion-color-primary-tint:#1a68b1; --ion-background-color:#f3f6f9; --ion-text-color:#142840; }
+html,body,ion-app { font-family:'Inter',Arial,sans-serif; }
+body {margin:0;background:#f3f6f9;color:#142840;}
+button,input,textarea,select {font-family:inherit;}
+* {box-sizing:border-box;}

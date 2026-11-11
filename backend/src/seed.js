@@ -1,0 +1,2 @@
+import 'dotenv/config';import bcrypt from 'bcryptjs';import {query,pool} from './db.js';
+const email=process.env.SEED_ADMIN_EMAIL,password=process.env.SEED_ADMIN_PASSWORD;if(!email||!password||password.length<10)throw Error('Define SEED_ADMIN_EMAIL y SEED_ADMIN_PASSWORD de 10+ caracteres');const hash=await bcrypt.hash(password,12);await query("INSERT INTO users(name,email,password_hash,role) VALUES('Administrador',?,?,'ADMIN') ON DUPLICATE KEY UPDATE email=email",[email,hash]);console.log('Administrador creado si no existía:',email);await pool.end();
